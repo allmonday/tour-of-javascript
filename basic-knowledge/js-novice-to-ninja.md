@@ -147,4 +147,48 @@ var pattern = /\w+ing/;
 var pattern = new RegExp('\w+ing');
 pattern.test('joke') // false
 pattern.test('joking')  // true
+
+var group = /[aeiou]/;
+var groupAZ = /[A-Z]/;
+// [0-9]
+var groupaz = /[^A-Z]/
+
+var pattern = /[Jj][aeiou]v[aeiou]/;
+
+/*
+g: global
+i: ignoreCase
+m: multiline
+*/
+
+var pattern = /java/i
+pattern.ignoreCase  // true
+
+/* special characters 
+\w : [A-Za-z0-9_]
+\W: [^A-Za-z0-9_]
+\d: [0-9]
+\D: [^0-9]
+\s: [\t\r\n\f]
+\S: [^ \t\r\n\f]
+*/
+
+/* modifiers
+?: 0, 1
+*: 0, >1
++: 1, >1 
+{n}: n times
+{n, }: >n
+{, m}: <m
+{n, m}:
+^:
+$:
+*/
+
+/* String method */
+"hello world".split(/s+/)
+"javascript".match(/[aeiou]/) // ["a"]
+"javascript".match(/[aeiou]/g) // ["a", "a", "i"]
+"javascript".search(/java/i) // 0
+"javascript".replace(/[aeiou]/ig, "*") // j*v*scr*pt
 ```

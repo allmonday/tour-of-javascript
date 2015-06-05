@@ -192,3 +192,49 @@ $:
 "javascript".search(/java/i) // 0
 "javascript".replace(/[aeiou]/ig, "*") // j*v*scr*pt
 ```
+
+## Chapter 6: DOM
+
+```javascript
+var body = document.body;
+typeof body; // "object"
+body.nodeType;  // 1
+```
+
+code | type
+--- | ---
+1 | element
+2 | attribute
+3 | text
+8 | comment
+9 | document
+
+```javascript
+body.nodeName // "body"
+
+/* shortcut */
+document.body;
+document.images;
+document.links;
+document.anchors;
+document.forms;
+
+/* get element by id */
+var title = document.getElementById('title')
+var paragraphs = document.getElementsByTagName('p')
+var cls = document.getElementsByClassName('swim');
+
+document.querySelector('#bike')
+document.querySelector('.swim')
+
+/* navigating */
+var sports = document.getElementById('sports')
+sports.childNodes
+/*
+NodeList [ #text "
+", <p.swim>, #text "
+", <p#bike>, #text "
+", <p>, #text "
+" ]
+*/
+```

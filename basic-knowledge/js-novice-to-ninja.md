@@ -237,4 +237,48 @@ NodeList [ #text "
 ", <p>, #text "
 " ]
 */
+sports.firstChild
+sports.lastChild
+bike.parentNode
+bike.nextSibling
+bike.previousSibling
+
+// finding the value of node
+swimTextNode = swim.firstChild
+swimTextNode.nodeValue
+
+var a = document.querySelector('p')
+// undefined
+a.textContent
+/*
+"The Document Object Model (DOM) allows you to access elements of a web
+  page and enable interaction with the page by adding and removing elements,
+  changing the order of elements, changing the content of elements, changing
+  element attributes, and even altering how elements are styled."
+*/
+
+// attributes
+swim.getAttribute("class"); // "swim"
+var meta = document.getElementsByTagName("meta")[0];
+meta.getAttribute("charset"); // if not exist, return null
+
+swim.setAttribute("class", "swimming");
+
+swim.className; // "swimming"
+
+// classList is avaliable in IE10 and above
+swim.classList.add('run');
+swim.classList.remove('swim');
+swim.classList.toggle('sport');
+swim.classList.contains('sport');
+
+
+/* add element dynamically*/
+var newPara = document.createElement('p');
+var text = document.createTextNode('Transition 1');
+newPara.appendChild(text);
+
+sports.innerHTML;
+swim.style.border = "blue 2px solid";
+swim.style.backgroundColor = "green";
 ```

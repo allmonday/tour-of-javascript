@@ -282,3 +282,52 @@ sports.innerHTML;
 swim.style.border = "blue 2px solid";
 swim.style.backgroundColor = "green";
 ```
+
+## chapter 6: testing and debugging
+
+### strict mode: 严格模式会产生更多异常, 阻止使用弃用的特性.
+```javascript
+(function () {
+  'use strict';
+  }());
+```
+
+### linting tools: js lint, js hint
+
+### browser sniffing:
+```javascript
+window.navigator.userAgent; // may not correct
+```
+
+### feature detection:
+```
+if (window.unicorn) {
+  unicorn();
+}
+```
+
+### error objects:
+```javascript
+var error = new Error("opps, something went wrong");
+
+RangeError
+EvalError
+ReferenceError
+SyntaxError
+TypeError
+URIError
+
+throw 5;
+throw "javascript";
+throw {name: "Ninja"};
+
+throw new Error("something goes wrong");
+
+try {
+  return String(squareRoot(number))
+} catch (error) {
+  return squareRoot(-number) + "i"
+} finally {
+  console.log("hi");
+}
+```

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.outer {
+			padding: 30px;
+			border: 1px solid red;
+		}
+		.inner {
+			border: 1px solid yellow;
+		}
+		.items li {
+			display: inline-block;
+			padding: 20px;
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div class="outer">
+		<div class="inner">
+			<ul class="items">
+				<li>item1</li>
+				<li>item2</li>
+				<li>item3</li>
+			</ul>
+		</div>
+	</div>
+
+	<p class="counter">counter</p>
+	<p class="item">the item</p>
+	<script>
+		var outer = document.querySelector(".outer");
+		outer.addEventListener("click", function (event) {
+			console.log(event.target);
+			var pc = document.querySelector(".counter");
+			var pcVal = parseInt(pc.textContent) || 1;
+			pcVal += 1;
+			pc.textContent = pcVal;
+		})
+
+		var items = document.querySelector(".items");
+		items.addEventListener("click", function (event) {
+			console.log(event.target);
+			document.querySelector(".item").textContent = event.target.textContent;
+			event.stopPropagation();	
+		})
+
+	</script>
+	
+</body>
+</html>

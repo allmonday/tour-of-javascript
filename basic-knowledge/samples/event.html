@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.outer,
+		.inner,
+		.target {
+			padding: 30px;
+			border: 1px solid yellow;
+		}
+		.outer {
+			height: 2000px;
+		}
+		#click {
+			border: 1px solid red;
+			display: inline-block;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="outer">
+		<div class="inner">
+			<div class="target">
+				<div id="click">
+					click me
+				</div>
+				<br>
+				<form action="">
+					<label for="input-1">input-1</label><input type="text" id="input-1">
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function doSomething(event) {
+			console.log('type', event.type);
+			console.log('target', event.target);
+			console.log('screen x', event.screenX);
+			console.log('screen y', event.screenY);	// 根据屏幕定位
+			console.log('client x', event.clientX);
+			console.log('client y', event.clientY);  // 根据页面定位, 滚动的值不记录
+			console.log('page x', event.pageX);
+			console.log('page y', event.pageY); // 滚动的值记入
+			console.log('mouse ', event.which); // 滚动的值记入
+		}
+		// global event listener
+		addEventListener('click', doSomething);
+
+		var click = document.getElementById("click");
+		function clickHandler (type, event) {
+			console.log(type);
+			event.stopPropagation();
+		}
+		var types = ["mouseup", "click", "mousedown"];
+		for (var i=0; i<types.length; i++) {
+			var type = types[i];
+			click.addEventListener(type, clickHandler.bind(undefined, type));
+		}
+
+	</script>
+	
+</body>
+</html>

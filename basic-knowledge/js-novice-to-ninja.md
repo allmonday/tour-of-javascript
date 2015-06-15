@@ -283,7 +283,11 @@ swim.style.border = "blue 2px solid";
 swim.style.backgroundColor = "green";
 ```
 
-## chapter 6: testing and debugging
+## chapter 7: events
+
+
+
+## chapter 10: testing and debugging
 
 ### strict mode: 严格模式会产生更多异常, 阻止使用弃用的特性.
 ```javascript

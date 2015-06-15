@@ -285,6 +285,7 @@ swim.style.backgroundColor = "green";
 
 ## chapter 7: events
 
+[background-event-sample](http://jsfiddle.net/ugwss9rt/1/)
 
 
 ## chapter 10: testing and debugging

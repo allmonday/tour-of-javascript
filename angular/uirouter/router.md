@@ -2,6 +2,8 @@
 在首次登陆的时候, 发生了 infinite digest 的情况, 发现需要这么修改 otherwise
 具体原因不明, 待理解.
 
+reference: [issues/600](https://github.com/angular-ui/ui-router/issues/600)
+
 ```javascript
 // origin
 $urlRouterProvider.otherwise("/account/login");

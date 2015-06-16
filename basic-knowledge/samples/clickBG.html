@@ -16,6 +16,11 @@
 			padding: 20px;
 			border: 1px solid #ccc;
 		}
+		.highlight {
+			background-color: #777;
+			color: #fff;
+		}
+
 	</style>
 </head>
 <body>
@@ -44,6 +49,7 @@
 		var items = document.querySelector(".items");
 		items.addEventListener("click", function (event) {
 			console.log(event.target);
+			event.target.classList.toggle("highlight");
 			document.querySelector(".item").textContent = event.target.textContent;
 			event.stopPropagation();	
 		})

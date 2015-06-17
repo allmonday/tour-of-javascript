@@ -10,3 +10,12 @@ a.forEach(function (obj) {
 })
 
 console.log(a);
+
+var le = 'asdfasldfjalsdfjaljdfljaskdf;asdjf'
+// var le = 'aasdjf'
+if (le.length > 9) {
+	le = le.slice(0, 9);
+	le += '...';
+}
+console.log(le);
+

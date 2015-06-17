@@ -1,3 +1,5 @@
+// please reference to: https://github.com/allmonday/tour-of-gulp
+
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserify = require('browserify');

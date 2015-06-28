@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<pre>
+		#a -> a
+		#b -> b
+	</pre>
+	<a href="#a">print a</a>
+	<a href="#b">print b</a>
+	<script>
+		function route() {
+			console.log(window.location.hash.slice(1));
+		}
+		window.addEventListener('hashchange', route);
+	</script>	
+</body>
+</html>

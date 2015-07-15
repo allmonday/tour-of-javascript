@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.fadeOut {
+			visibility: hidden;
+			opacity: 0;
+			transition: visibility 0s 0.3s, opacity 0.3s linear;
+		}
+		.block-list li {
+			display: inline-block;
+		}	
+		.block {
+			height: 30px;
+			width: 30px;
+			background-color: green;
+			margin-right:5px;
+		}
+	</style>
+</head>
+
+<body>
+	<ul class="block-list">
+		<li><div class="block"></div></li>
+		<li><div class="block"></div></li>
+		<li><div class="block"></div></li>
+		<li><div class="block"></div></li>
+		<li><div class="block"></div></li>
+		<li><div class="block"></div></li>
+		<li><div class="block"></div></li>
+		<li><div class="block"></div></li>
+		<li><div class="block"></div></li>
+		<li><div class="block"></div></li>
+		<li><div class="block"></div></li>
+		<li><div class="block"></div></li>
+	</ul>
+	<script src="./jquery.min.js"></script>
+	<script>
+		(function () {
+			"use strict";
+			var blockList = Array.prototype.slice.call(
+				document.querySelectorAll('.block'));
+			function fadeOneByOne() {
+				var $block = $(blockList.shift()); 
+				$block.hide(Math.random() * 1500, function () { fadeOneByOne(); })}
+			fadeOneByOne();
+		})();
+
+	</script>
+	
+</body>
+</html>

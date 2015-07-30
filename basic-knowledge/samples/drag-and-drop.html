@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>drag and drop</title>
+	<style>
+		#div1, #div2 {
+			height: 100px;
+			width: 200px;
+			border: 1px solid gray;
+			margin-bottom: 20px;
+		}
+
+		.drag-block {
+			background-color: red;
+			height: 50px;
+			width: 100px;
+			margin: 0 auto;
+		}
+	</style>
+
+	<script>
+		function allowDrop(e) {
+			console.log('flying on ', e.target.id);  // 当位于该对象内时, 触发 
+			e.preventDefault();
+		};
+
+		function drag(e) {
+			console.log('drag ', e.target);
+			e.dataTransfer.setData('text', e.target.id); // 获取对象id
+		};
+
+		function drop(e) {
+			console.log('drop ', e.target);
+			e.preventDefault();
+			var data = e.dataTransfer.getData('text');
+			e.target.appendChild(document.getElementById(data));
+		};
+
+		function dragend(e) {
+			console.log('end of drag');
+		}
+	</script>
+</head>
+
+<body>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<!-- draggable: 元素可以被拖放, ondragstart: 元素开始被拖动 -->
+		<div id="drag1" class="drag-block" draggable="true" ondragstart="drag(event)" ondragend="dragend(event)"></div>
+	</div>	
+	<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</body>
+</html>
